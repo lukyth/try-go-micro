@@ -15,11 +15,13 @@ $ consul agent -dev
 ### Run Service
 
 ```
-$ go run main.go
+$ micro api
+$ go run srv/main.go
+$ go run api/api.go
 ```
 
 ### Run Client
 
 ```
-$ go run client.go
+$ curl -H "Content-Type: application/json" -X POST -d '{"text":"hello, world"}' localhost:8080/svc_string/string/uppercase
 ```
