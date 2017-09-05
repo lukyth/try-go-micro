@@ -3,27 +3,20 @@ package main
 import (
 	"github.com/micro/go-log"
 	"github.com/micro/go-micro"
-	"github.com/lukyth/try-go-micro/svc_string/handler"
-	"github.com/lukyth/try-go-micro/svc_string/subscriber"
 
-	example "github.com/lukyth/try-go-micro/svc_string/proto/example"
+	"github.com/lukyth/try-go-micro/svc_string/handler"
+	proto "github.com/lukyth/try-go-micro/svc_string/proto"
 )
 
 func main() {
 	// New Service
 	service := micro.NewService(
-		micro.Name("go.micro.srv.svc_string"),
-		micro.Version("latest"),
+		micro.Name("svc_string"),
+		micro.Version("1.0.0"),
 	)
 
 	// Register Handler
-	example.RegisterExampleHandler(service.Server(), new(handler.Example))
-
-	// Register Struct as Subscriber
-	micro.RegisterSubscriber("topic.go.micro.srv.svc_string", service.Server(), new(subscriber.Example))
-
-	// Register Function as Subscriber
-	micro.RegisterSubscriber("topic.go.micro.srv.svc_string", service.Server(), subscriber.Handler)
+	proto.RegisterStringHandler(service.Server(), new(handler.String))
 
 	// Initialise service
 	service.Init()

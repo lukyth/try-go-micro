@@ -1,6 +1,4 @@
-# Svc_string Srv
-
-This is the Svc_string service with fqdn go.micro.srv.svc_string.
+# Service String
 
 ## Getting Started
 
@@ -11,7 +9,7 @@ Install Consul
 
 Run Consul
 ```
-$ consul agent -dev -advertise=127.0.0.1
+$ consul agent -dev
 ```
 
 ### Run Service
@@ -20,11 +18,8 @@ $ consul agent -dev -advertise=127.0.0.1
 $ go run main.go
 ```
 
-### Building a container
+### Run Client
 
-If you would like to build the docker container do the following
 ```
-CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -ldflags '-w' -o svc_string-srv ./main.go
-docker build -t svc_string-srv .
-
+$ go run client.go
 ```

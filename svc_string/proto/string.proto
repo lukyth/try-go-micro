@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package svc_string;
+
+service String {
+	rpc Uppercase(UppercaseRequest) returns (UppercaseResponse) {}
+	rpc Count(CountRequest) returns (CountResponse) {}
+}
+
+message UppercaseRequest {
+	string text = 1;
+}
+
+message UppercaseResponse {
+	string text = 1;
+}
+
+message CountRequest {
+	string text = 1;
+}
+
+message CountResponse {
+	int32 count = 1;
+}
