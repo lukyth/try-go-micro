@@ -15,7 +15,7 @@ $ consul agent -dev
 ### Run Service
 
 ```
-$ micro api
+$ micro --api_handler=rpc api
 $ go run srv/main.go
 $ go run api/api.go
 ```
@@ -23,5 +23,5 @@ $ go run api/api.go
 ### Run Client
 
 ```
-$ curl -H "Content-Type: application/json" -X POST -d '{"text":"hello, world"}' localhost:8080/svc_string/string/uppercase
+$ curl -H 'Content-Type: application/json' -d'{"text":"hello, world"}' localhost:8080/svc_string/string/uppercase
 ```
