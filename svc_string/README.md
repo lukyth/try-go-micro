@@ -15,7 +15,7 @@ $ consul agent -dev
 ### Run Service
 
 ```
-$ micro api
+$ micro api --handler=proxy --namespace=api
 $ go run srv/main.go
 $ go run api/api.go
 ```
@@ -23,5 +23,6 @@ $ go run api/api.go
 ### Run Client
 
 ```
-$ curl -H "Content-Type: application/json" -X POST -d '{"text":"hello, world"}' localhost:8080/svc_string/string/uppercase
+$ curl -X POST -H "Content-Type: application/json" -d'{"text":"hello, world"}' localhost:8080/string/uppercase
+$ curl -X POST -H "Content-Type: application/json" -d'{"text":"hello, world"}' localhost:8080/string/count
 ```

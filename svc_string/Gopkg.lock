@@ -2,6 +2,12 @@
 
 
 [[projects]]
+  name = "github.com/emicklei/go-restful"
+  packages = [".","log"]
+  revision = "68c9750c36bb8cb433f1b88c807b4b30df4acc40"
+  version = "v2.2.1"
+
+[[projects]]
   name = "github.com/go-log/log"
   packages = [".","log"]
   revision = "37e2e1f19306361e1fc152a1839f1236149cb4e4"
@@ -57,15 +63,15 @@
 
 [[projects]]
   branch = "master"
+  name = "github.com/micro/go-web"
+  packages = ["."]
+  revision = "fe87e1d0413cb7b78bbd665bebcae62acedc0e5d"
+
+[[projects]]
+  branch = "master"
   name = "github.com/micro/mdns"
   packages = ["."]
   revision = "cdf30746f9f70dc7a366d3d885792a092fd83102"
-
-[[projects]]
-  name = "github.com/micro/micro"
-  packages = ["api/proto"]
-  revision = "1133b5ab77de4e49e9b99c709f0d52280765680d"
-  version = "v0.3.0"
 
 [[projects]]
   branch = "master"
@@ -112,6 +118,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "e5f4101b0092a47966441e700278feb23a6aaa26bd8b65556a45251c1c7ba39c"
+  inputs-digest = "c1b4570eb4d20460cb5bbfe92723563290f1c7699d2ecf3deae0dd77190aca26"
   solver-name = "gps-cdcl"
   solver-version = 1
